@@ -5,7 +5,7 @@ const portfolioData = [
         title: "Chinese Restaurant",
         category: "delivery", 
         description: "Landing Page focada em conversão para delivery de comida chinesa com integração de apps.",
-        image: "https://images.unsplash.com/photo-1541696490865-92dc7212c524?q=80&w=600&auto=format&fit=crop", 
+        image: "https://images.unsplash.com/flagged/photo-1556742524-750f2ab99913?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         link: "https://davemottaa.github.io/ChineseRestaurant/",
         tags: ["High Conversion", "UI/UX", "Mobile First"]
     },
