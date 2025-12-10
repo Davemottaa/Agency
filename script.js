@@ -5,7 +5,7 @@ const portfolioData = [
         title: "Chinese Restaurant",
         category: "delivery", 
         description: "Landing Page focada em conversão para delivery de comida chinesa com integração de apps.",
-        image: "https://images.unsplash.com/flagged/photo-1556742524-750f2ab99913?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+        image: "https://images.unsplash.com/photo-1541696490865-92dc7212c524?q=80&w=600&auto=format&fit=crop", 
         link: "https://davemottaa.github.io/ChineseRestaurant/",
         tags: ["High Conversion", "UI/UX", "Mobile First"]
     },
@@ -35,6 +35,24 @@ const portfolioData = [
         image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=600&auto=format&fit=crop",
         link: "https://davemottaa.github.io/GabrielleStore/",
         tags: ["Fashion", "E-commerce", "Minimalista"]
+    },
+    {
+        id: 5,
+        title: "PetDOG Shop",
+        category: "varejo", /* Encaixado em Varejo ou Serviços */
+        description: "Plataforma amigável para Pet Shops, unindo agendamento de banho e tosa com vitrine de produtos.",
+        image: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?q=80&w=600&auto=format&fit=crop",
+        link: "https://davemottaa.github.io/PetDOG/",
+        tags: ["Pet Care", "Agendamento", "Design Divertido"]
+    },
+    {
+        id: 6,
+        title: "Portfólio & Branding",
+        category: "servicos",
+        description: "Conceito de Personal Branding para desenvolvedores e profissionais criativos.",
+        image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=600&auto=format&fit=crop",
+        link: "https://davemottaa.github.io/portifolio/",
+        tags: ["Personal Branding", "Showcase", "Web Design"]
     }
 ];
 
@@ -72,6 +90,20 @@ function displayProjects(projects) {
 // Carregar inicial
 window.addEventListener('DOMContentLoaded', () => {
     displayProjects(portfolioData);
+    
+    // Inicia a animação de scroll (do passo anterior) se existir
+    const revealElements = document.querySelectorAll('.reveal-up');
+    if(revealElements.length > 0) {
+        const scrollOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            });
+        }, scrollOptions);
+        revealElements.forEach(el => revealOnScroll.observe(el));
+    }
 });
 
 // Sistema de Filtros
